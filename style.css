@@ -142,3 +142,127 @@ footer a:hover{color:#fff}
   h1{font-size:2.65rem}.hero-grid{min-height:auto}.hero-card{transform:none}
   .continer{flex-direction:column;align-items:center}.team img{width:100%;max-width:300px}
 }
+
+/* REWARD BOX */
+
+.reward-box {
+    max-width: 400px;
+    margin: 30px auto;
+    padding: 25px;
+    text-align: center;
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.15);
+}
+
+.reward-box h3 {
+    color: #0057ff;
+    font-size: 24px;
+}
+
+.reward-box p {
+    color: #555;
+}
+
+.reward-box button,
+.form-box button {
+    padding: 13px 20px;
+    border: none;
+    border-radius: 8px;
+    background: #0057ff;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.reward-box button:hover,
+.form-box button:hover {
+    background: #003db3;
+}
+
+
+/* FORM BACKGROUND */
+
+.reward-form {
+    display: none;
+
+    position: fixed;
+    inset: 0;
+
+    background: rgba(0,0,0,0.65);
+
+    align-items: center;
+    justify-content: center;
+
+    z-index: 9999;
+}
+
+
+/* FORM BOX */
+
+.form-box {
+    position: relative;
+
+    width: 90%;
+    max-width: 400px;
+
+    background: white;
+
+    padding: 30px;
+
+    border-radius: 15px;
+
+    text-align: center;
+}
+
+.form-box h2 {
+    color: #0057ff;
+}
+
+.form-box p {
+    color: #666;
+}
+
+
+/* INPUTS */
+
+.form-box input {
+    width: 100%;
+    box-sizing: border-box;
+
+    padding: 13px;
+
+    margin: 8px 0;
+
+    border: 1px solid #ddd;
+
+    border-radius: 7px;
+}
+
+
+/* SUBMIT BUTTON */
+
+.form-box button {
+    width: 100%;
+    margin-top: 10px;
+}
+
+
+/* CLOSE BUTTON */
+
+.close {
+    position: absolute;
+
+    right: 15px;
+    top: 8px;
+
+    font-size: 30px;
+
+    color: #777;
+
+    cursor: pointer;
+}
+
+.close:hover {
+    color: red;
+}
