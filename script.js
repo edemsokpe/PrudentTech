@@ -42,25 +42,42 @@ if(form){
   });
 }
 
+
+  // Show reward form
 function openReward() {
+
+    document.getElementById("rewardBox").style.display = "none";
 
     document.getElementById("rewardForm").style.display = "flex";
 
 }
 
 
+// Close the first reward popup
 function closeReward() {
+
+    document.getElementById("rewardBox").style.display = "none";
+
+}
+
+
+// Close the form
+function closeForm() {
 
     document.getElementById("rewardForm").style.display = "none";
 
 }
 
 
+// Download the book
 function downloadBook(event) {
 
     event.preventDefault();
 
-    // Your PDF is inside the assets folder
+    // Remember that the visitor has received the reward
+    localStorage.setItem("rewardClaimed", "true");
+
+    // Your PDF
     const book = "assets/Now-that-you-are-born-again.pdf";
 
     // Create download link
@@ -68,16 +85,16 @@ function downloadBook(event) {
 
     link.href = book;
 
-    link.download = "Now that you are born again.pdf";
+    link.download = "Now That You Are Born Again.pdf";
 
     document.body.appendChild(link);
 
-    // Download the book
     link.click();
 
     document.body.removeChild(link);
 
-    // Go back to homepage
+
+    // Return to homepage
     setTimeout(function() {
 
         window.location.href = "index.html";
@@ -85,3 +102,18 @@ function downloadBook(event) {
     }, 1500);
 
 }
+
+
+// Check if visitor has already claimed reward
+window.addEventListener("DOMContentLoaded", function() {
+
+    const rewardClaimed =
+        localStorage.getItem("rewardClaimed");
+
+    if (rewardClaimed === "true") {
+
+        document.getElementById("rewardBox").style.display = "none";
+
+    }
+
+});
