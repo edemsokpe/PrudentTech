@@ -266,3 +266,47 @@ footer a:hover{color:#fff}
 .close:hover {
     color: red;
 }
+
+function openReward() {
+
+    document.getElementById("rewardForm").style.display = "flex";
+
+}
+
+
+function closeReward() {
+
+    document.getElementById("rewardForm").style.display = "none";
+
+}
+
+
+function downloadBook(event) {
+
+    event.preventDefault();
+
+    // Your PDF is inside the assets folder
+    const book = "assets/Now-that-you-are-born-again.pdf";
+
+    // Create download link
+    const link = document.createElement("a");
+
+    link.href = book;
+
+    link.download = "Now that you are born again.pdf";
+
+    document.body.appendChild(link);
+
+    // Download the book
+    link.click();
+
+    document.body.removeChild(link);
+
+    // Go back to homepage
+    setTimeout(function() {
+
+        window.location.href = "index.html";
+
+    }, 1500);
+
+}
