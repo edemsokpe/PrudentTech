@@ -7,6 +7,66 @@
 <link rel="stylesheet" href="style.css">
 </head>
 <body data-page="home">
+<!-- Reward Popup -->
+<div id="rewardBox" class="reward-box">
+
+    <div class="reward-content">
+
+        <button class="close-btn" onclick="closeReward()">×</button>
+
+        <h2>🎁 Welcome to Prudent Tech!</h2>
+
+        <p>
+            Are you new to Prudent Tech?
+        </p>
+
+        <p>
+            Click below for your free reward.
+        </p>
+
+        <button class="reward-btn" onclick="openReward()">
+            Click Here for Your Reward
+        </button>
+
+    </div>
+
+</div>
+
+
+<!-- Reward Form -->
+<div id="rewardForm" class="reward-form">
+
+    <div class="form-content">
+
+        <button class="close-btn" onclick="closeForm()">×</button>
+
+        <h2>Get Your Free Book</h2>
+
+        <form onsubmit="downloadBook(event)">
+
+            <input
+                type="text"
+                id="visitorName"
+                placeholder="Enter your name"
+                required
+            >
+
+            <input
+                type="email"
+                id="visitorEmail"
+                placeholder="Enter your email"
+                required
+            >
+
+            <button type="submit">
+                Download My Book
+            </button>
+
+        </form>
+
+    </div>
+
+</div>
 
 <header>
  <div class="container nav">
@@ -96,59 +156,6 @@
   <div class="footer-bottom"><span>© <span class="year"></span> Prudent Tech Academy. All Rights Reserved.</span><span>Big Idea? Let's Code It.</span></div>
  </div>
 </footer>
-
-<!-- REWARD BOX -->
-
-<div class="reward-box">
-
-    <h3>🎗 New to Prudent Tech?</h3>
-
-    <p>Click here for your reward.</p>
-
-    <button onclick="openReward()">
-        Click Here for Your Reward
-    </button>
-
-</div>
-
-
-<!-- REWARD FORM -->
-
-<div id="rewardForm" class="reward-form">
-
-    <div class="form-box">
-
-        <span class="close" onclick="closeReward()">×</span>
-
-        <h2>🎗 Your Free Reward</h2>
-
-        <p>Fill in your details to receive your free book.</p>
-
-        <form onsubmit="downloadBook(event)">
-
-            <input
-                type="text"
-                id="name"
-                placeholder="Your Name"
-                required
-            >
-
-            <input
-                type="email"
-                id="email"
-                placeholder="Your Email"
-                required
-            >
-
-            <button type="submit">
-                Get My Free Book 📖
-            </button>
-
-        </form>
-
-    </div>
-
-</div>
 
 <script src="script.js"></script>
 </body></html>
