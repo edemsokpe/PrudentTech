@@ -1,0 +1,7 @@
+# secrets and local files
+backend/.env
+backend/venv/
+backend/.venv/
+__pycache__/
+*.pyc
+.DS_Store

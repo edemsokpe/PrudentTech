@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>Admin Login | Prudent Tech Academy</title>
+<link rel="icon" href="../assets/logo.png">
+<link rel="stylesheet" href="admin.css">
+</head>
+<body data-page="login" class="login-body">
+<main class="login-card">
+  <img src="../assets/logo.png" alt="Prudent Tech Academy logo" class="login-logo">
+  <h1>Admin Login</h1>
+  <p class="muted">Sign in to view contact form messages.</p>
+  <form id="loginForm" autocomplete="on">
+    <label for="username">Username</label>
+    <input id="username" name="username" autocomplete="username" required autofocus>
+    <label for="password">Password</label>
+    <input id="password" name="password" type="password" autocomplete="current-password" required>
+    <div id="loginError" class="form-error" role="alert"></div>
+    <button class="btn btn-primary" type="submit">Sign in</button>
+  </form>
+  <a class="back-link" href="../index.html">← Back to website</a>
+</main>
+<script src="../config.js"></script>
+<script src="admin.js"></script>
+</body>
+</html>

@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>Dashboard | Prudent Tech Academy Admin</title>
+<link rel="icon" href="../assets/logo.png">
+<link rel="stylesheet" href="admin.css">
+</head>
+<body data-page="dashboard">
+
+<header class="topbar">
+  <div class="topbar-inner">
+    <div class="brand">
+      <img src="../assets/logo.png" alt="">
+      <div><strong>Prudent Tech Academy</strong><span>Admin Dashboard</span></div>
+    </div>
+    <div class="topbar-actions">
+      <span class="who" id="who"></span>
+      <a class="btn btn-ghost" href="../index.html" target="_blank" rel="noopener">View site</a>
+      <button class="btn btn-ghost" id="logoutBtn" type="button">Log out</button>
+    </div>
+  </div>
+</header>
+
+<main class="wrap">
+  <section class="stats" aria-label="Summary">
+    <div class="stat"><span>Total messages</span><strong id="stTotal">–</strong></div>
+    <div class="stat accent"><span>New (unread)</span><strong id="stNew">–</strong></div>
+    <div class="stat"><span>Received today</span><strong id="stToday">–</strong></div>
+    <div class="stat"><span>Last 7 days</span><strong id="stWeek">–</strong></div>
+    <div class="stat"><span>Replied</span><strong id="stReplied">–</strong></div>
+  </section>
+
+  <section class="panel">
+    <div class="toolbar">
+      <input id="search" type="search" placeholder="Search name, email, phone, service or message…" aria-label="Search messages">
+      <select id="statusFilter" aria-label="Filter by status">
+        <option value="">All statuses</option>
+        <option value="new">New</option>
+        <option value="read">Read</option>
+        <option value="replied">Replied</option>
+        <option value="archived">Archived</option>
+      </select>
+      <select id="serviceFilter" aria-label="Filter by service"><option value="">All services</option></select>
+      <button class="btn btn-ghost" id="refreshBtn" type="button">↻ Refresh</button>
+      <button class="btn btn-primary" id="exportBtn" type="button">⬇ Export CSV</button>
+    </div>
+
+    <div class="table-wrap">
+      <table id="msgTable">
+        <thead>
+          <tr><th>Status</th><th>Name</th><th>Contact</th><th>Service</th><th>Message</th><th>Received</th></tr>
+        </thead>
+        <tbody id="msgBody"></tbody>
+      </table>
+      <div id="emptyState" class="empty" hidden></div>
+    </div>
+
+    <div class="pager">
+      <span id="pagerInfo" class="muted"></span>
+      <div>
+        <button class="btn btn-ghost" id="prevBtn" type="button">← Previous</button>
+        <button class="btn btn-ghost" id="nextBtn" type="button">Next →</button>
+      </div>
+    </div>
+  </section>
+</main>
+
+<div class="overlay" id="overlay"></div>
+<aside class="drawer" id="drawer" aria-hidden="true" aria-label="Message details">
+  <div class="drawer-head">
+    <div>
+      <h2 id="dName">Message</h2>
+      <span id="dBadge" class="badge"></span>
+    </div>
+    <button class="icon-btn" id="closeDrawer" type="button" aria-label="Close">✕</button>
+  </div>
+  <div class="drawer-body" id="drawerBody"></div>
+</aside>
+
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<script src="../config.js"></script>
+<script src="admin.js"></script>
+</body>
+</html>
