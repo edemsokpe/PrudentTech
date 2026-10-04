@@ -145,3 +145,73 @@ footer a:hover{color:#fff}
 .form-status.success{background:var(--green-light);color:var(--green-dark);border:1px solid #bfe6d3}
 .form-status.error{background:#fdecec;color:#9b1c1c;border:1px solid #f4c4c4}
 .btn:disabled{opacity:.65;cursor:not-allowed;transform:none}
+
+
+.ptb {
+    --ptb-green: #008000;
+    --ptb-green-deep: #005c00;
+    --ptb-green-night: #0a3d12;
+    --ptb-tint: #eaf5ec;
+    --ptb-ink: #10281a;
+    --ptb-display: "Bricolage Grotesque", "Trebuchet MS", system-ui, sans-serif;
+    --ptb-body: "Figtree", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+    overflow: hidden; padding: 12px 0; font-family: var(--ptb-body); box-sizing: border-box;
+    /* soft fade at both edges */
+    -webkit-mask-image: linear-gradient(to right, transparent, #000 4%, #000 96%, transparent);
+            mask-image: linear-gradient(to right, transparent, #000 4%, #000 96%, transparent);
+  }
+  .ptb *, .ptb *::before, .ptb *::after { box-sizing: border-box; }
+
+  .ptb-track {
+    display: flex; width: max-content;
+    animation: ptb-scroll 30s linear infinite;
+  }
+  /* pause when pointed at, touched, or focused with the keyboard */
+  .ptb:hover .ptb-track,
+  .ptb:active .ptb-track,
+  .ptb:focus-within .ptb-track { animation-play-state: paused; }
+/* moves exactly one set of four banners, then repeats invisibly */
+  @keyframes ptb-scroll { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+
+  .ptb-banner {
+    position: relative; overflow: hidden; display: flex; flex-direction: column; justify-content: space-between;
+    flex: 0 0 auto; width: 270px; margin-right: 12px;
+    min-height: 112px; padding: 14px 16px 12px; border-radius: 12px; text-decoration: none;
+    border: 2px solid var(--ptb-green);
+  }
+  .ptb-banner:hover { box-shadow: 0 8px 18px rgba(0, 92, 0, .22); }
+  .ptb-banner:focus-visible { outline: 3px solid var(--ptb-ink); outline-offset: 3px; }
+
+  .ptb-title { font-family: var(--ptb-display); font-weight: 800; font-size: 1.05rem; line-height: 1.15; letter-spacing: -0.01em; margin: 0; position: relative; z-index: 1; }
+  .ptb-foot { display: flex; align-items: center; justify-content: space-between; gap: 8px; margin-top: 10px; position: relative; z-index: 1; }
+  .ptb-from { font-size: .75rem; line-height: 1.1; }
+  .ptb-price { display: block; font-family: var(--ptb-display); font-weight: 800; font-size: 1.2rem; line-height: 1.1; }
+  .ptb-go { font-weight: 600; font-size: .8rem; padding: 6px 11px; border-radius: 6px; white-space: nowrap; }
+
+  .ptb-mark { position: absolute; right: -4px; top: -10px; font-family: var(--ptb-display); font-weight: 800; font-size: 4.5rem; line-height: 1; pointer-events: none; user-select: none; }
+
+  .ptb-1 { background: var(--ptb-green); color: #fff; }
+  .ptb-1 .ptb-mark { color: rgba(255, 255, 255, .14); }
+  .ptb-1 .ptb-go { background: #fff; color: var(--ptb-green-deep); }
+  .ptb-2 { background: #fff; color: var(--ptb-ink); }
+  .ptb-2 .ptb-title { color: var(--ptb-green-deep); }
+  .ptb-2 .ptb-mark { color: rgba(0, 128, 0, .10); }
+  .ptb-2 .ptb-price { color: var(--ptb-green); }
+  .ptb-2 .ptb-go { background: var(--ptb-green); color: #fff; }
+
+  .ptb-3 { background: var(--ptb-green-night); border-color: var(--ptb-green-night); color: #fff; }
+  .ptb-3 .ptb-mark { color: rgba(255, 255, 255, .10); }
+  .ptb-3 .ptb-go { background: #fff; color: var(--ptb-green-night); }
+
+  .ptb-4 { background: var(--ptb-tint); color: var(--ptb-ink); }
+  .ptb-4 .ptb-title { color: var(--ptb-green-deep); }
+  .ptb-4 .ptb-mark { color: rgba(0, 128, 0, .12); }
+  .ptb-4 .ptb-price { color: var(--ptb-green); }
+  .ptb-4 .ptb-go { background: var(--ptb-green-deep); color: #fff; }
+
+  /* For people who turn off motion on their device: no auto-scroll, swipe instead */
+  @media (prefers-reduced-motion: reduce) {
+    .ptb { overflow-x: auto; -webkit-mask-image: none; mask-image: none; padding-left: 16px; }
+    .ptb-track { animation: none; }
+    .ptb-banner[aria-hidden="true"] { display: none; }
+  }
