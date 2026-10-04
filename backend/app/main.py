@@ -14,7 +14,7 @@ from .security import hash_password
 
 # Only these files from the project root are ever served (keeps backend/ and .env private).
 SITE_FILES = {
-    "index.html", "about.html", "services.html", "work.html", "academy.html",
+    "index.html", "about.html", "services.html", "pricing.html", "work.html", "academy.html",
     "why-us.html", "faq.html", "contact.html", "style.css", "script.js", "config.js",
 }
 
